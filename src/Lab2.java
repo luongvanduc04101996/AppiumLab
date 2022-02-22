@@ -17,32 +17,24 @@ public class Lab2 {
         System.out.println(OddOrNot(numberToCheck));
     }
 
-    public static void NotificationBMIIndex(double bmiIndex) {
-        if (bmiIndex < MIN_BMI_NORMAL){
-            System.out.println("====> Underweight!!!!");
-        } else if (bmiIndex <= MAX_BMI_NORMAL){
-            System.out.println("====> Normal weight!!!");
-        } else if (bmiIndex <= MAX_BMI_OVERWEIGHT){
-            System.out.println("====> Overweight!!!");
-        } else {
-            System.out.println("====> Obesity!!!");
-        }
-    }
-
     public static void GiveAdviceYourBody(double height, double weight) {
         DecimalFormat decimalFormat = new DecimalFormat("0.0");
         double bmiIndex = Double.parseDouble(decimalFormat.format(weight / (height * height)));
-        NotificationBMIIndex(bmiIndex);
         if (bmiIndex < MIN_BMI_NORMAL) {
             double minIncreWeight = (MIN_BMI_NORMAL - bmiIndex) * (height * height);
             double maxIncreWeight = (MAX_BMI_NORMAL - bmiIndex) * (height * height);
-            System.out.printf("====> You should increase %.1f kg to %.1f kg to have normal weight", minIncreWeight, maxIncreWeight);
+            System.out.printf("====> Underweight!!!!\n====> You should increase %.1f kg to %.1f kg to have normal weight\n", minIncreWeight, maxIncreWeight);
+        } else if (bmiIndex <= MAX_BMI_NORMAL){
+            System.out.println("====> Normal weight!!!\n====> Your body is so beautiful");
         } else if (bmiIndex > MAX_BMI_NORMAL) {
             double maxDecreWeight = (bmiIndex - MIN_BMI_NORMAL) * (height * height);
             double minDecreWeight = (bmiIndex - MAX_BMI_NORMAL) * (height * height);
-            System.out.printf("====> You should decrease %.1f kg to %.1f kg to have normal weight", minDecreWeight, maxDecreWeight);
-        } else {
-            System.out.println("====> Your body is so beautiful");
+            if (bmiIndex <= MAX_BMI_OVERWEIGHT) {
+                System.out.println("====> Overweight!!!");
+            } else {
+                System.out.println("====> Obesity!!!");
+            }
+            System.out.printf("====> You should decrease %.1f kg to %.1f kg to have normal weight\n", minDecreWeight, maxDecreWeight);
         }
     }
 
