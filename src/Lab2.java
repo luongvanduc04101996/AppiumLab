@@ -26,7 +26,7 @@ public class Lab2 {
             System.out.printf("====> Underweight!!!!\n====> You should increase %.1f kg to %.1f kg to have normal weight\n", minIncreWeight, maxIncreWeight);
         } else if (bmiIndex <= MAX_BMI_NORMAL){
             System.out.println("====> Normal weight!!!\n====> Your body is so beautiful");
-        } else if (bmiIndex > MAX_BMI_NORMAL) {
+        } else {
             double maxDecreWeight = (bmiIndex - MIN_BMI_NORMAL) * (height * height);
             double minDecreWeight = (bmiIndex - MAX_BMI_NORMAL) * (height * height);
             if (bmiIndex <= MAX_BMI_OVERWEIGHT) {
