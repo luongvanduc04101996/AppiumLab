@@ -22,7 +22,7 @@ public class Lab2 {
             System.out.println("====> Underweight!!!!");
         } else if (bmiIndex <= MAX_BMI_NORMAL){
             System.out.println("====> Normal weight!!!");
-        } else if (bmiIndex <= 29.9){
+        } else if (bmiIndex <= MAX_BMI_OVERWEIGHT){
             System.out.println("====> Overweight!!!");
         } else {
             System.out.println("====> Obesity!!!");
