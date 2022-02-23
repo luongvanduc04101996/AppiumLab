@@ -39,7 +39,6 @@ public class Lab2 {
     }
 
     public static String OddOrNot(int number) {
-        String result = (number % 2) != 0 ? "This is odd number" : "This is even number";
-        return result;
+        return (number % 2) != 0 ? "This is odd number" : "This is even number";
     }
 }
