@@ -6,23 +6,23 @@ public class Lab3 {
         Scanner scan = new Scanner(System.in);
         System.out.print("Please enter your length of list numbers: ");
         int lengthList = scan.nextInt();
-        int[] listNumberA = RandomList(lengthList);
-        int[] listNumberB = RandomList(lengthList);
+        int[] listNumberA = randomList(lengthList);
+        int[] listNumberB = randomList(lengthList);
         System.out.println("----- The first list numbers -------");
-        ShowList(listNumberA);
+        showList(listNumberA);
         System.out.println("\n----- Count numbers -------");
-        CountOddOrEvenNumber(listNumberA);
+        countOddOrEvenNumber(listNumberA);
         System.out.println("\n----- Min max numbers -------");
-        FindMaxAndMinNumber(listNumberA);
+        findMaxAndMinNumber(listNumberA);
         System.out.println("\n----- Sorted list number 1 -------");
-        int [] listNumberASorted = SortMinToMax(listNumberA);
+        int [] listNumberASorted = sortMinToMax(listNumberA);
         System.out.println("\n----- Sorted list number 2 -------");
-        int [] listNumberBSorted = SortMinToMax(listNumberB);
+        int [] listNumberBSorted = sortMinToMax(listNumberB);
         System.out.println("\n----- Merge two sorted list above -------");
-        MergeTwoSorted(listNumberASorted, listNumberBSorted);
+        mergeTwoSorted(listNumberASorted, listNumberBSorted);
     }
 
-    public static int[] RandomList(int lengthList) {
+    public static int[] randomList(int lengthList) {
         int[] listNumber = new int[lengthList];
         Random random = new Random();
         for (int index = 0; index < lengthList; index++) {
@@ -31,13 +31,13 @@ public class Lab3 {
         return listNumber;
     }
 
-    public static void ShowList(int[] listNumber) {
+    public static void showList(int[] listNumber) {
         for (int number : listNumber) {
             System.out.print(" " + number);
         }
     }
 
-    public static void CountOddOrEvenNumber(int[] listNumber) {
+    public static void countOddOrEvenNumber(int[] listNumber) {
         int countOdd = 0;
         int countEven = 0;
         for (int number : listNumber) {
@@ -50,7 +50,7 @@ public class Lab3 {
         System.out.printf("Even numbers: %d\nOdd numbers: %d", countEven, countOdd);
     }
 
-    public static void FindMaxAndMinNumber(int[] listNumber) {
+    public static void findMaxAndMinNumber(int[] listNumber) {
         int max = listNumber[0];
         int min = listNumber[0];
         for (int number : listNumber) {
@@ -64,7 +64,7 @@ public class Lab3 {
         System.out.printf("Max number: %d\nMin number: %d", max, min);
     }
 
-    public static int[] SortMinToMax(int[] listNumber) {
+    public static int[] sortMinToMax(int[] listNumber) {
         for (int index = 0; index < listNumber.length - 1; index++) {
             int min = listNumber[index];
             for (int tempIndex = index + 1; tempIndex < listNumber.length; tempIndex++) {
@@ -75,11 +75,11 @@ public class Lab3 {
                 }
             }
         }
-        ShowList(listNumber);
+        showList(listNumber);
         return listNumber;
     }
 
-    public static void MergeTwoSorted(int[] listNumberA, int[] listNumberB) {
+    public static void mergeTwoSorted(int[] listNumberA, int[] listNumberB) {
         int lengthTwoList = listNumberA.length + listNumberB.length;
         int[] listNumberOutput = new int[lengthTwoList];
         int countIndex = 0;
@@ -109,6 +109,6 @@ public class Lab3 {
                 break;
             }
         }
-        ShowList(listNumberOutput);
+        showList(listNumberOutput);
     }
 }

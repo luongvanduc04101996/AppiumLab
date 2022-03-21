@@ -24,7 +24,7 @@ public class Lab5 {
                 case 2:
                     System.out.print("Please enter the student ID to find: ");
                     int student_ID = scanner.nextInt();
-                    FindInfoInMapByID(mapStudents, student_ID);
+                    findInfoInMapByID(mapStudents, student_ID);
                     System.out.println("Successful!!!");
                     System.out.print("Please choose your option: ");
                     break;
@@ -39,7 +39,7 @@ public class Lab5 {
         } while (yourOption != 3);
     }
 
-    private static void FindInfoInMapByID(Map<Integer, String> inputMap, int inputID) {
+    private static void findInfoInMapByID(Map<Integer, String> inputMap, int inputID) {
         System.out.printf("-----> Student ID: %d -----> Student name: %s", inputID, inputMap.get(inputID));
         System.out.println();
     }

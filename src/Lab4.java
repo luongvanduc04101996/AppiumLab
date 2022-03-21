@@ -18,7 +18,7 @@ public class Lab4 {
                     System.out.print("Please choose your option: ");
                     break;
                 case 2:
-                    ShowList(listInt);
+                    showList(listInt);
                     System.out.print("Please choose your option: ");
                     break;
                 case 3:
@@ -32,7 +32,7 @@ public class Lab4 {
                 case 5:
                     System.out.print("Please enter the number need find: ");
                     int numberFind = scanner.nextInt();
-                    FindNumberToKnowIndex(listInt, numberFind);
+                    findNumberToKnowIndex(listInt, numberFind);
                     System.out.print("Please choose your option: ");
                     break;
                 case 6:
@@ -46,7 +46,7 @@ public class Lab4 {
         } while (yourOption != 6);
     }
 
-    private static void ShowList(List<Integer> listNum) {
+    private static void showList(List<Integer> listNum) {
         System.out.print("-------> Your List:");
         for (Integer num : listNum) {
             System.out.print(" " + num);
@@ -54,7 +54,7 @@ public class Lab4 {
         System.out.print("\n");
     }
 
-    private static void FindNumberToKnowIndex(List<Integer> listNum, int valueNumber) {
+    private static void findNumberToKnowIndex(List<Integer> listNum, int valueNumber) {
         for (int index = 0; index < listNum.size(); index++) {
             if (listNum.get(index) == valueNumber) {
                 System.out.printf("Find number: %s ---> Index: %s", valueNumber, index);

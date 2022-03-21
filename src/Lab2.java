@@ -12,13 +12,13 @@ public class Lab2 {
         double height = scanner.nextDouble();
         System.out.print("Please enter your weight (kg): ");
         double weight = scanner.nextDouble();
-        GiveAdviceYourBody(height, weight);
+        giveAdviceYourBody(height, weight);
         System.out.print("Please enter the integer number to check odd or not: ");
         int numberToCheck = scanner.nextInt();
-        System.out.println(OddOrNot(numberToCheck));
+        System.out.println(oddOrNot(numberToCheck));
     }
 
-    public static void GiveAdviceYourBody(double height, double weight) {
+    public static void giveAdviceYourBody(double height, double weight) {
         DecimalFormat decimalFormat = new DecimalFormat("0.0");
         double bmiIndex = Double.parseDouble(decimalFormat.format(weight / (height * height)));
         if (MIN_BMI_NORMAL <= bmiIndex && bmiIndex <= MAX_BMI_NORMAL) {
@@ -38,7 +38,7 @@ public class Lab2 {
         System.out.printf("====> You should decrease %.1f kg to %.1f kg to have normal weight\n", maxChangeWeight, minChangeWeight);
     }
 
-    public static String OddOrNot(int number) {
+    public static String oddOrNot(int number) {
         return (number % 2) != 0 ? "This is odd number" : "This is even number";
     }
 }
